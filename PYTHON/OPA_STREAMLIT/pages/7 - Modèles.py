@@ -130,13 +130,11 @@ with col2:
     #si le bouton start a été appuyé
     if bouton :
         with st.spinner('Chargement en cours...'):
-            #col1_, col2_ = st.columns([5, 5])
             if len(option) % 2 == 0:
                 taille = int(len(option) / 2)
             else:
                 taille = int((len(option) + 1) / 2)
-            #with col1_:
-                #application du modèle SARIMAX
+            #application du modèle SARIMAX
             st.markdown("""
             <div style="font-size: 22px;text-align:center">
             <strong>Modèle SARIMAX</strong> <br>
@@ -144,6 +142,4 @@ with col2:
             """, unsafe_allow_html=True)
             runSarimax()
 
-            #col1_, col2_ = st.columns([5, 5])
-        
     
