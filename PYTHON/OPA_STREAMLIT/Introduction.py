@@ -1,11 +1,14 @@
 import streamlit as st
 import pandas as pd
+from pathlib import Path 
 st.set_page_config(page_title="ONLINE PORTFOLIO ALLOCATION", layout="wide")
+
 
 #séparation des colonnes pour centrer la photo
 col1, col2, col3 = st.columns([0.01, 5, 0.01])
 with col2:
-   st.image("./images/financeV8.png",  use_container_width=True) 
+   path = Path("./images/financeV8.png")
+   st.image(path,  use_container_width=True) 
 
    st.markdown("""
    <div style="
@@ -57,7 +60,8 @@ with col1:
 
 #image de finance centré vers la droite
 with col3:
-   st.image("./images/bourse.jpg",  width=400)
+   path = Path("./images/bourse.jpg")
+   st.image(path,  width=400)
 
 col1, col2 = st.columns([5,5])
 with col1: 
@@ -79,6 +83,7 @@ with col1:
       """, unsafe_allow_html=True)
 
 with col3:
-   st.image("./images/yahoo_finance.png",  width=300)
+   path = Path("./images/yahoo_finance.png")
+   st.image(path,  width=300)
    
 
