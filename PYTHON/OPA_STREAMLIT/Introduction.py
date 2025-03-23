@@ -12,7 +12,7 @@ col1, col2, col3 = st.columns([0.01, 5, 0.01])
 with col2:
    path = Path('./PYTHON/OPA_STREAMLIT/financeV8.png')
    image = Image.open(path)
-   st.image("./PYTHON/OPA_STREAMLIT/financeV8.png",  use_container_width=True) 
+   st.image("./PYTHON/OPA_STREAMLIT/images/financeV8.png",  use_container_width=True) 
 
    st.markdown("""
    <div style="
