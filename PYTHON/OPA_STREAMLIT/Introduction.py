@@ -2,7 +2,8 @@ import streamlit as st
 import pandas as pd
 from pathlib import Path 
 from PIL import Image
-st.set_page_config(page_title="ONLINE PORTFOLIO ALLOCATION", layout="wide")
+st.set_page_config(page_title="ONLINE PORTFOLIO ALLOCATION ", layout="wide")
+st.write("Répertoire actuel : ", os.getcwd())
 
 
 #séparation des colonnes pour centrer la photo
