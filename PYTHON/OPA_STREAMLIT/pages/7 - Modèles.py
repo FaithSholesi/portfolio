@@ -11,7 +11,6 @@ import shap
 import io
 
 path = "./PYTHON/OPA_STREAMLIT/"
-#path = "."
 
 #inport et traitement des df
 df_top10_return = pd.read_csv(path + "/data/dfInfo_return.csv")
@@ -38,7 +37,6 @@ choix = [mot[2:len(mot)-7] for mot in choix]
 
 #global predicts
 
-#@st.cache_data
 def runSarimax():
     entCpt = 0
     global predicts
@@ -75,30 +73,6 @@ def runSarimax():
                     axs[j].set_visible(False)
     st.pyplot(fig, transparent=True)
 
-#@st.cache_data
-def runRL():
-    fig, axs = plt.subplots(taille, 2, figsize=(20, taille * 5))
-    cpt = 0
-    global donnee
-    global predictData
-    for i in range(taille):
-        for j in range(2):
-            if cpt < len(option):
-                donnee = y.filter(like="C_" + option[cpt] + "_return")
-                predictData = predicList.filter(like="C_" + option[cpt] + "_return")
-                if len(option) > 2:
-                    printRL(axs[i, j])
-                    set_upModel(axs[i, j])
-                if len(option) < 3:
-                    printRL(axs[j])
-                    set_upModel(axs[j])
-                cpt += 1
-            else:
-                if len(option) > 2:
-                    axs[i, j].set_visible(False)
-                if len(option) < 3:
-                    axs[j].set_visible(False)
-    st.pyplot(fig, transparent=True)
 
 def set_upModel(axs):
     axs.tick_params(axis='both', colors='black')
@@ -118,19 +92,12 @@ def printSARIMAX(axs):
     axs.legend(['Observed', 'Predicted'])
     axs.set_title(courslog.columns[0], color='black')
 
-def printRL(axs):
-    axs.scatter(donnee.index, donnee, color='blue', label='Données')
-    axs.plot(predictData.index, predictData, color='red', label='Régression linéaire')
-    axs.legend(['Observed', 'Predicted'])
-    axs.set_title(donnee.columns[0], color='black')
-
-
 col1, col2, col3 = st.columns([1.5, 5, 1.5])
 with col2:
     st.title("Modèles")
     st.markdown("""
         <div style="font-size: 25px;margin-bottom:5%">
-        Nous allons maintenant appliquer nos modèles de prédictions: <strong>SARIMAX et Régression Linéaire</strong><br>
+        Nous allons maintenant appliquer le modèle de prédictions: <strong>SARIMAX</strong><br>
         </div>
             """, unsafe_allow_html=True)
 
@@ -176,42 +143,7 @@ with col2:
                 </div>
                 """, unsafe_allow_html=True)
                 runSarimax()
-            with col2_:
-                #application du modèle de regression linéaire
-                st.markdown("""
-                <div style="font-size: 22px;text-align:center">
-                <strong>Modèle de régression linéaire</strong> <br>
-                </div>
-                """, unsafe_allow_html=True)
-                runRL()
 
             col1_, col2_ = st.columns([5, 5])
-            with col1_:
-                #affichage métrique pour le SARIMAX
-                filtered_columns = [col for col in df_test.columns if any(keyword + "_return" in col for keyword in option)]
-                df_filtered = df_test[filtered_columns]
-                true_values = df_filtered.iloc[0:1].to_numpy().reshape(len(option), 1)
-                maePred = round(mean_absolute_error(true_values, predicts), 3)
-                r2Pred = round(r2_score(true_values, predicts), 3)
-                st.markdown("""
-                <div style="font-size: 20px;text-align:center;"><strong>
-                Mean Absolute Error:  """ + str(maePred) + """ <br>
-                R2 score: """ + str(r2Pred) + """ </strong>
-                </div>
-                """, unsafe_allow_html=True)
-
-            with col2_:
-                filtered_columns = [col for col in y.columns if any(keyword + "_return" in col for keyword in option)]
-                dataFilter = y[filtered_columns]
-                predListFilter = predicList[filtered_columns]
-                #affichage métrique pour la regression linéaire
-                date = str(date)
-                mae = round(mean_absolute_error(dataFilter.loc[date], predListFilter.loc[date]), 3)
-                r2 = round(r2_score(dataFilter.loc[date], predListFilter.loc[date]), 3)
-
-                st.markdown("""
-                <div style="font-size: 20px;text-align:center;"><strong>
-                Mean Absolute Error:  """ + str(mae) + """ <br>
-                R2 score: """ + str(r2) + """ </strong>
-                </div>
-                """, unsafe_allow_html=True)
+        
+    
