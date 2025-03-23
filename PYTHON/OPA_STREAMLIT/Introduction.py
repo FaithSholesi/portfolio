@@ -1,10 +1,7 @@
 import streamlit as st
 import os
 import pandas as pd
-from pathlib import Path 
-from PIL import Image
 st.set_page_config(page_title="ONLINE PORTFOLIO ALLOCATION ", layout="wide")
-st.write("Répertoire actuel : ", os.getcwd())
 path = "./PYTHON/OPA_STREAMLIT/"
 
 
