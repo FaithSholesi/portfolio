@@ -64,8 +64,7 @@ with col1:
 
 #image de finance centré vers la droite
 with col3:
-   path = Path("/images/bourse.jpg")
-   st.image(path,  width=400)
+   st.image(path + "/images/bourse.jpg",  width=400)
 
 col1, col2 = st.columns([5,5])
 with col1: 
@@ -87,7 +86,6 @@ with col1:
       """, unsafe_allow_html=True)
 
 with col3:
-   path = Path("/images/yahoo_finance.png")
-   st.image(path,  width=300)
+   st.image(path + "/images/yahoo_finance.png",  width=300)
    
 
