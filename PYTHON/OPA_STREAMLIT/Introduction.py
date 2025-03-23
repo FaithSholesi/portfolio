@@ -7,7 +7,7 @@ st.set_page_config(page_title="ONLINE PORTFOLIO ALLOCATION", layout="wide")
 #séparation des colonnes pour centrer la photo
 col1, col2, col3 = st.columns([0.01, 5, 0.01])
 with col2:
-   path = Path("./images/financeV8.png")
+   path = Path("/images/financeV8.png")
    st.image(path,  use_container_width=True) 
 
    st.markdown("""
@@ -60,7 +60,7 @@ with col1:
 
 #image de finance centré vers la droite
 with col3:
-   path = Path("./images/bourse.jpg")
+   path = Path("/images/bourse.jpg")
    st.image(path,  width=400)
 
 col1, col2 = st.columns([5,5])
@@ -83,7 +83,7 @@ with col1:
       """, unsafe_allow_html=True)
 
 with col3:
-   path = Path("./images/yahoo_finance.png")
+   path = Path("/images/yahoo_finance.png")
    st.image(path,  width=300)
    
 
