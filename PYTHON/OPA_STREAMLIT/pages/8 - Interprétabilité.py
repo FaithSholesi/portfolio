@@ -10,14 +10,16 @@ from sklearn.linear_model import LinearRegression
 import shap
 import io
 
+path = "./PYTHON/OPA_STREAMLIT/"
+
 #inport et traitement des df
-df_top10_return=pd.read_csv("./data/dfInfo_return.csv")
+df_top10_return=pd.read_csv(path +"/data/dfInfo_return.csv")
 df_top10_return.set_index(df_top10_return.iloc[:,0], inplace=True)
 df_top10_return.index = pd.to_datetime(df_top10_return.index)
 df_top10_return = df_top10_return.drop("Date", axis = 1)
 
 y = df_top10_return
-X = pd.read_csv("./data/X_RL.csv")
+X = pd.read_csv(path + "/data/X_RL.csv")
 X.set_index(X.iloc[:,0], inplace=True)
 X.index = pd.to_datetime(X.index)
 X = X.drop("Date", axis = 1)

@@ -3,12 +3,14 @@ import pandas as pd
 import datetime
 import numpy as np
 
-df_top10_filter = pd.read_csv("./data/dfInfo.csv")
+path = "./PYTHON/OPA_STREAMLIT/"
+
+df_top10_filter = pd.read_csv(path + "/data/dfInfo.csv")
 df_top10_filter.set_index(df_top10_filter.iloc[:,0], inplace=True)
 df_top10_filter.index = pd.to_datetime(df_top10_filter.index)
 df_top10_filter = df_top10_filter.drop("Date", axis = 1)
 
-predicList = pd.read_csv("./data/predict.csv")
+predicList = pd.read_csv(path + "/data/predict.csv")
 predicList.set_index(predicList.iloc[:,0], inplace=True)
 predicList.index = pd.to_datetime(predicList.index)
 predicList = predicList.drop("Date", axis = 1)
@@ -27,7 +29,7 @@ choix = [mot[2:len(mot)-7] for mot in choix]
 with col2:
     st.title("Testons")
 
-    df=pd.read_csv("./data/20240423_PEA_stocks_info.csv")
+    df=pd.read_csv(path + "/data/20240423_PEA_stocks_info.csv")
     st.markdown("""
     <div style="font-size: 25px;">
     Le but est de savoir : <strong> Est-ce que notre modèle est plus

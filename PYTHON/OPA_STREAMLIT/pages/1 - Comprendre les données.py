@@ -2,8 +2,10 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-df=pd.read_csv("./data/20240423_PEA_stocks_info.csv")
+path = "./PYTHON/OPA_STREAMLIT/"
+df=pd.read_csv(path + "/data/20240423_PEA_stocks_info.csv")
 choix = ["Pays", "Secteur", "Industrie", "Taille de l'entreprise", "Chiffre d'affaires"]
+
     
 
 col1, col2, col3 = st.columns([2.5, 5, 2.5])

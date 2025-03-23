@@ -5,6 +5,8 @@ import seaborn as sns
 
 col1, col2, col3 = st.columns([2.5, 5, 2.5])
 
+path = "./PYTHON/OPA_STREAMLIT/"
+
 with col2:
     st.title("Performances journalières")
     st.markdown("""
@@ -32,7 +34,7 @@ with col2:
         </div>
         """, unsafe_allow_html=True)
 
-    st.image("./images/decomposition_series_temporielle.png",  use_container_width=True) 
+    st.image(path + "/images/decomposition_series_temporielle.png",  use_container_width=True) 
 
     col1_, col2_ = st.columns([5, 5])
     with col1_:

@@ -5,8 +5,10 @@ import matplotlib.pyplot as plt
 from statsmodels.tsa.seasonal import seasonal_decompose 
 import statsmodels.api as sm
 
+path = "./PYTHON/OPA_STREAMLIT/"
+
 #récupération du dataset des données de rendement
-df_top10_return=pd.read_csv("./data/dfInfo_return.csv")
+df_top10_return=pd.read_csv(path + "/data/dfInfo_return.csv")
 
 #affichage des entreprises nom court
 choix = df_top10_return.columns[1::]
@@ -38,7 +40,7 @@ with col2:
         st.dataframe(choix)
         st.write("</div>", unsafe_allow_html=True)
     with col2_:
-        st.image("./images/entrepriseV8.png",  use_container_width=True) 
+        st.image(path + "/images/entrepriseV8.png",  use_container_width=True) 
 
     with col3_:
         st.markdown("""
@@ -62,7 +64,7 @@ with col2:
     Objectif : Calculer le rendement journalier <br><br>
     </div>
     """, unsafe_allow_html=True)
-    st.image("./images/recupV4.png",  use_container_width=True) 
+    st.image(path + "/images/recupV4.png",  use_container_width=True) 
 
     st.markdown("""
     <div style="font-size: 30px;text-align:center;margin-top:20%"> <br>
@@ -128,11 +130,11 @@ with col2:
     col1_, col2_ = st.columns([5, 2])
     with col1_:
         if option == "BMW" :
-            st.image("./images/C_BMW_return.jpg", width = 900) 
+            st.image(path + "/images/C_BMW_return.jpg", width = 900) 
         else :
             name = df_top10_return.filter(like = option).columns[0]
             name = name.replace("/","")
-            st.image("./images/"+ name +".jpg", width = 900) 
+            st.image(path + "/images/"+ name +".jpg", width = 900) 
 
     with col2_:
         st.markdown("""

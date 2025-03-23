@@ -2,19 +2,19 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 
+path = "./PYTHON/OPA_STREAMLIT/"
 
+info = pd.read_csv(path + "/data/20240423_PEA_stocks_info.csv")
 
-info = pd.read_csv("./data/20240423_PEA_stocks_info.csv")
+historical = pd.read_csv(path + "/data/AN8068571086_historical_market_data.csv")
 
-historical = pd.read_csv("./data/AN8068571086_historical_market_data.csv")
+cash_flow = pd.read_csv(path + "/data/AN8068571086_cash_flow_data.csv")
 
-cash_flow = pd.read_csv("./data/AN8068571086_cash_flow_data.csv")
+balance_sheet = pd.read_csv(path + "/data/AN8068571086_balance_sheet_data.csv")
 
-balance_sheet = pd.read_csv("./data/AN8068571086_balance_sheet_data.csv")
+financials = pd.read_csv(path + "/data/AN8068571086_financials_data.csv")
 
-financials = pd.read_csv("./data/AN8068571086_financials_data.csv")
-
-new_df=pd.read_csv("./data/complete_processed_df_v4.csv")
+new_df=pd.read_csv(path + "/data/complete_processed_df_v4.csv")
 
 col1, col2, col3 = st.columns([2.5, 5, 2.5])
 

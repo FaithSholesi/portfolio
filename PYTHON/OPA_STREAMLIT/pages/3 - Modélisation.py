@@ -12,16 +12,17 @@ from sklearn.ensemble import RandomForestRegressor, RandomForestClassifier
 from sklearn.svm import SVC
 from sklearn.neighbors import KNeighborsClassifier
 
+path = "./PYTHON/OPA_STREAMLIT/"
 
 def prediction(modele):
 
-    modele = joblib.load("./modèles/"+modele)
+    modele = joblib.load(path + "/modèles/"+modele)
     
     return modele
   
 st.title("Modélisation du Rendement Annuel")
 
-new_df=pd.read_csv("./data/complete_processed_df_v4.csv")
+new_df=pd.read_csv(path + "/data/complete_processed_df_v4.csv")
 
 isins = new_df['isin']
 short_names = new_df['shortName']
@@ -73,7 +74,7 @@ if type_modele=='Régression':
     
     st.write(" ")
     st.markdown('**Comparatif**')
-    st.image("./images/Régression.png", width = 700)
+    st.image(path + "/images/Régression.png", width = 700)
 
 
     
@@ -153,7 +154,7 @@ elif type_modele=='Classification':
 
     st.write(" ")
     st.markdown('**Comparatif**')
-    st.image("Images/Classification.png", width = 800)
+    st.image(path + "images/Classification.png", width = 800)
 
 
     st.write(" ")
