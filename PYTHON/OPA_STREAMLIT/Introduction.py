@@ -8,7 +8,7 @@ st.set_page_config(page_title="ONLINE PORTFOLIO ALLOCATION", layout="wide")
 #séparation des colonnes pour centrer la photo
 col1, col2, col3 = st.columns([0.01, 5, 0.01])
 with col2:
-   path = Path("./images/financeV8.png")
+   path = Path("images/financeV8.png")
    image = Image.open(path)
    st.image(image,  use_container_width=True) 
 
