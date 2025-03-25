@@ -5,7 +5,8 @@ import matplotlib.pyplot as plt
 from statsmodels.tsa.seasonal import seasonal_decompose 
 import statsmodels.api as sm
 
-path = "./PYTHON/OPA_STREAMLIT/"
+#path = "./PYTHON/OPA_STREAMLIT/"
+path = "."
 
 #récupération du dataset des données de rendement
 df_top10_return=pd.read_csv(path + "/data/dfInfo_return.csv")
@@ -22,39 +23,37 @@ with col2:
     </div>
     """, unsafe_allow_html=True)
 
-    #explication sur l'analyse des données
-    col1_, col2_, col3_ = st.columns([2, 13, 2])
-    with col1_:
-        st.markdown(
-            """
-            <style>
-            .dataframe-table {
-                margin-left: auto;
-                margin-right: auto;
-            }
-            </style>
-            """, 
-            unsafe_allow_html=True
-        )
-        st.write("<div class='dataframe-table'>", unsafe_allow_html=True)
-        st.dataframe(choix)
-        st.write("</div>", unsafe_allow_html=True)
-    with col2_:
-        st.image(path + "/images/entrepriseV8.png",  use_container_width=True) 
+    # #explication sur l'analyse des données
+    # col1_, col2_, col3_ = st.columns([2, 8, 0.5])
+    # with col1_:
+    #     st.markdown(
+    #         """
+    #         <style>
+    #         .dataframe-table {
+    #             margin-left: auto;
+    #             margin-right: auto;
+    #         }
+    #         </style>
+    #         """, 
+    #         unsafe_allow_html=True
+    #     )
+    #     st.write("<div class='dataframe-table'>", unsafe_allow_html=True)
+    #     st.dataframe(choix)
+    #     st.write("</div>", unsafe_allow_html=True)
+    # with col2_:
+    #     st.image(path + "/images/entrepriseV8.png",  use_container_width=True) 
 
-    with col3_:
-        st.markdown("""
-        <div style="font-size: 20px;text-align:center;border: 2px solid black;
-        margin-left:auto;margin-right:auto;padding-left:5%;padding-right:5%;padding-bottom:40%;"> <br><br><br>
-        Recherches externes font ressortir plusieurs points: <br><br>
-        <strong>
-        Majorité des entreprises les plus performantes sont des banques scandinaves
-        </div>
-        """, unsafe_allow_html=True)
+    # with col3_:
+    #     st.markdown("""
+    #     <div style="font-size: 15px;text-align:center;border: 2px solid black;">
+    #     <strong>
+    #     Majorité des entreprises les plus performantes sont des banques scandinaves
+    #     </div>
+    #     """, unsafe_allow_html=True)
 
     #explication de la création du dataframe
     st.markdown("""
-    <div style="font-size: 25px;text-align:center;border: 2px solid white;margin-bottom:5%;margin-top:30%;"> <br>
+    <div style="font-size: 25px;text-align:center;border: 2px solid white;margin-bottom:5%;"> <br>
     Récupérons les données suivantes pour les 10
     entreprises les plus performantes: <br><strong>
      Fermeture du cours <br>
