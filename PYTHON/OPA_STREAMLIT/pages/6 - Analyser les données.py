@@ -135,7 +135,7 @@ with col2:
         Peu de résidu"""]
         
     #affichage des explications avec les graphiques
-    col1_, col2_ = st.columns([5, 2])
+    col1_, col2_ = st.columns([5, 3])
     with col1_:
         if option == "BMW" :
             st.image(path + "/images/C_BMW_return.jpg", width = 900) 
