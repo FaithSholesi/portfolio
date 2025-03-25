@@ -43,7 +43,6 @@ with col2:
     # with col2_:
     #     st.image(path + "/images/entrepriseV8.png",  use_container_width=True) 
 
-<<<<<<< HEAD
     # with col3_:
     #     st.markdown("""
     #     <div style="font-size: 15px;text-align:center;border: 2px solid black;">
@@ -51,7 +50,6 @@ with col2:
     #     Majorité des entreprises les plus performantes sont des banques scandinaves
     #     </div>
     #     """, unsafe_allow_html=True)
-=======
     with col3_:
         st.markdown("""
         <div style="font-size: 20px;text-align:center;border: 2px solid black;
@@ -61,7 +59,6 @@ with col2:
         Majorité des entreprises les plus performantes sont des banques scandinaves
         </div>
         """, unsafe_allow_html=True)
->>>>>>> 4f83c35a4eee114bc3dd4b56f8af08105c741f65
 
     #explication de la création du dataframe
     st.markdown("""
