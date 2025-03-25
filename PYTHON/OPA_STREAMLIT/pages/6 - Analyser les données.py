@@ -75,7 +75,7 @@ with col2:
     st.image(path + "/images/recupV4.png",  use_container_width=True) 
 
     st.markdown("""
-    <div style="font-size: 30px;text-align:center;margin-top:20%"> <br>
+    <div style="font-size: 20px;text-align:center;margin-top:20%"> <br>
     Pour une analyse approfondie des données, nous pouvons effectuer
     une décomposition de la série. <br><br>
     Décompositon de la série pour les 10 entreprises:<br><br>
