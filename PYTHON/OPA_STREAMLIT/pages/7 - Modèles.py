@@ -10,8 +10,8 @@ from sklearn.linear_model import LinearRegression
 import shap
 import io
 
-#path = "./PYTHON/OPA_STREAMLIT/"
-path = "."
+path = "./PYTHON/OPA_STREAMLIT/"
+#path = "."
 
 #inport et traitement des df
 df_top10_return = pd.read_csv(path + "/data/dfInfo_return.csv")
