@@ -44,7 +44,8 @@ with col2:
 
     with col3_:
         st.markdown("""
-        <div style="font-size: 20px;text-align:center;border: 2px solid black;"><br><br><br>
+        <div style="font-size: 20px;text-align:center;border: 2px solid black;margin-left:auto;margin-right:auto;
+        padding-left:auto;padding-right:auto;padding-left:5%;padding-right:5%;padding-bottom:40%;"><br><br><br>
         <strong>
         Majorité des entreprises les plus performantes sont des banques scandinaves
         </div>
