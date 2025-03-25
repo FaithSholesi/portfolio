@@ -50,15 +50,15 @@ with col2:
     #     Majorité des entreprises les plus performantes sont des banques scandinaves
     #     </div>
     #     """, unsafe_allow_html=True)
-    with col3_:
-        st.markdown("""
-        <div style="font-size: 20px;text-align:center;border: 2px solid black;
-        margin-left:50%;margin-right:50%;padding-left:5%;padding-right:5%;padding-bottom:40%;"> <br><br><br>
-        Recherches externes font ressortir plusieurs points: <br><br>
-        <strong>
-        Majorité des entreprises les plus performantes sont des banques scandinaves
-        </div>
-        """, unsafe_allow_html=True)
+    #with col3_:
+    #    st.markdown("""
+    #    <div style="font-size: 20px;text-align:center;border: 2px solid black;
+    #    margin-left:50%;margin-right:50%;padding-left:5%;padding-right:5%;padding-bottom:40%;"> <br><br><br>
+    #    Recherches externes font ressortir plusieurs points: <br><br>
+    #    <strong>
+    #    Majorité des entreprises les plus performantes sont des banques scandinaves
+    #    </div>
+    #    """, unsafe_allow_html=True)
 
     #explication de la création du dataframe
     st.markdown("""
