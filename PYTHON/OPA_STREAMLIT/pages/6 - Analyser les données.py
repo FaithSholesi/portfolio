@@ -5,8 +5,8 @@ import matplotlib.pyplot as plt
 from statsmodels.tsa.seasonal import seasonal_decompose 
 import statsmodels.api as sm
 
-#path = "./PYTHON/OPA_STREAMLIT/"
-path = "."
+path = "./PYTHON/OPA_STREAMLIT/"
+#path = "."
 
 #récupération du dataset des données de rendement
 df_top10_return=pd.read_csv(path + "/data/dfInfo_return.csv")
