@@ -21,7 +21,7 @@ with col2:
    font-weight: normal;
    font-style: italic;">
    Projet effectué dans le cadre de la formation Data
-   Scientist de DataScientist.com <br>
+   Scientist de DataScientest.com <br>
    Promotion novembre 2023 <br>
    Créatrices <br>
    Sofía Cárdenas <br>
